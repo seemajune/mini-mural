@@ -1,0 +1,42 @@
+.StickyNote {
+  position: absolute;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.selected {
+  border: 2px solid #9dc8ff;
+  border-radius: 5px;
+}
+
+.edit-mode {
+  border: 2px solid #94c55e;
+}
+
+.sticky-note-content {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  word-break: break-all;
+  font-size: 0.9rem;
+  color: #616161;
+}
+
+.sticky-note-content:focus {
+  outline: none;
+}
