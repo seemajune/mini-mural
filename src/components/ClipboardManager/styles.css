@@ -2,15 +2,11 @@
   margin-top: auto;
 }
 
-.ClipboardManager:focus {
-  outline: none;
-}
-
 .clipboard-icon {
   background: #ffffff;
   border-radius: 50%;
   padding: 1rem;
-  color: #477b7b;
+  color: #74477b;
   border: 1px solid #c3c3c3;
   position: relative;
 }
@@ -29,5 +25,4 @@
   top: -13px;
   right: -3px;
   font-size: 0.8rem;
-  font-family: sans-serif;
 }

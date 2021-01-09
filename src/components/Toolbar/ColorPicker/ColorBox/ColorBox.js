@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Color from "color";
 import classnames from "classnames";
 import "./styles.css";
-
 class ColorBox extends React.Component {
   static propTypes = {
     onClick: PropTypes.func,
@@ -13,6 +12,13 @@ class ColorBox extends React.Component {
   handleClick = e => {
     const color = e.target.dataset.color;
     this.props.onClick(color);
+  };
+
+  handleKeypress = e => {
+    if (!e.keyCode === 13) {
+      return;
+    }
+    this.handleClick(e);
   };
 
   getBorderStyle = () => {
@@ -36,12 +42,15 @@ class ColorBox extends React.Component {
     const className = classnames("colorBox", { activeBox: active });
 
     return (
-      <div
+      <button
         className={className}
         onClick={this.handleClick}
+        onKeyPress={this.handleKeypress}
         data-color={color}
         style={{ background: color, border: this.getBorderStyle() }}
-      />
+      >
+        <div className="sr-only">{color}</div>
+      </button>
     );
   }
 }

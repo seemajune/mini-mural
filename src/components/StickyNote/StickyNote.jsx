@@ -86,6 +86,12 @@ class StickyNote extends React.Component {
     this.setState({ editMode: false });
   };
 
+  handleFocus = e => {
+    if (this.state.editMode === true) return;
+    this.selectNote(e);
+    this.editNote();
+  };
+
   render() {
     const { editMode } = this.state;
     const { id, text, color, height, width, x, y, selected } = this.props;
@@ -96,12 +102,14 @@ class StickyNote extends React.Component {
     });
 
     const textColor = Color(color)
-      .darken(0.4)
+      .darken(0.75)
       .desaturate(0.3);
     const boxShadowColor = Color(color).darken(0.1);
 
     return (
       <div
+        tabIndex="0"
+        onFocus={this.handleFocus}
         className={StickyNoteClassnames}
         style={{
           width,

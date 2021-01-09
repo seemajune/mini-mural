@@ -25,7 +25,14 @@ class ColorPicker extends React.Component {
       />
     ));
 
-    return <div className="ColorPicker">{colorBoxes}</div>;
+    return (
+      <div className="ColorPicker">
+        <div className="sr-only" id="pick-a-color">
+          choose a color
+        </div>
+        {colorBoxes}
+      </div>
+    );
   }
 }
 

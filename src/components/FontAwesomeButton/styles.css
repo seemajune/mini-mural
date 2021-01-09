@@ -1,10 +1,10 @@
 .icon {
-  background: #9dc8ff;
-  color: white;
-  font-size: 0.8rem;
+  background: white;
+  color: darkblue;
+  font-size: 1rem;
   padding: 3px;
-  height: 15px;
-  width: 15px;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;

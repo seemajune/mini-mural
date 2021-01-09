@@ -1,0 +1,26 @@
+.instructions-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  width: 100%;
+  list-style: none;
+  padding: 0.125rem;
+  font-size: 0.9rem;
+  background: white;
+  border-top: 2px solid #d4d4d4;
+}
+
+li {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.125rem;
+}
+
+.key {
+  background: cornsilk;
+  text-align: center;
+}

@@ -12,26 +12,6 @@ class Welcome extends React.Component {
     return (
       <div className="Welcome">
         <img src={logo} className="logo" alt="logo" />
-        <div className="instructions">
-          <p>
-            Add Note: <span className="key">Double Click</span>
-          </p>
-          <p>
-            Edit Note: <span className="key">Click</span>
-          </p>
-          <p>
-            Multiple Selection: <span className="key">Shift</span> +{" "}
-            <span className="key">V</span>
-          </p>
-          <p>
-            Copy Notes: <span className="key">Ctrl</span> +{" "}
-            <span className="key">C</span>
-          </p>
-          <p>
-            Paste Notes: <span className="key">Ctrl</span> +{" "}
-            <span className="key">V</span>
-          </p>
-        </div>
       </div>
     );
   }

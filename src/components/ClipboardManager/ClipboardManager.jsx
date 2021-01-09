@@ -45,11 +45,14 @@ class ClipboardManager extends React.Component {
     const clipboardCount = Object.values(clipboard).length;
 
     return (
-      <div className="ClipboardManager">
+      <div className="ClipboardManager" role="status">
         {!!clipboardCount ? (
           <div className="clipboard-icon">
             <i className="fa fa-clipboard" aria-hidden="true" />
             <span className="clipboard-counter">{clipboardCount}</span>
+            <span className="sr-only">
+              {clipboardCount > 1 ? "items copied" : "item copied"}
+            </span>
           </div>
         ) : null}
       </div>

@@ -19,7 +19,7 @@
 }
 
 .selected {
-  border: 2px solid #9dc8ff;
+  border: 2px solid currentColor;
   border-radius: 5px;
 }
 
@@ -35,8 +35,4 @@
   word-break: break-all;
   font-size: 0.9rem;
   color: #616161;
-}
-
-.sticky-note-content:focus {
-  outline: none;
 }

@@ -3,10 +3,16 @@ import PropTypes from "prop-types";
 import Toolbar from "../Toolbar";
 import StickyNote from "../StickyNote";
 
-import { NOTE_DEFAULT_HEIGHT, NOTE_DEFAULT_WIDTH } from "../../constants";
+import {
+  NOTE_DEFAULT_HEIGHT,
+  NOTE_DEFAULT_WIDTH,
+  MIN_X,
+  MIN_Y
+} from "../../constants";
 import { pixelsToInt } from "../../utils";
 import "./styles.css";
 import Welcome from "../Welcome";
+import Instructions from "../Instructions";
 
 class Mural extends React.Component {
   static propTypes = {
@@ -37,15 +43,34 @@ class Mural extends React.Component {
     }
   };
 
+  getRandomPosition() {
+    return {
+      x:
+        Math.random() * (window.innerWidth - NOTE_DEFAULT_WIDTH - MIN_X) +
+        MIN_X,
+      y:
+        Math.random() * (window.innerHeight - NOTE_DEFAULT_HEIGHT - MIN_Y) +
+        MIN_Y
+    };
+  }
+
   addNoteToMural = e => {
     if (e.target.classList.contains("sticky-note-content")) {
       return;
     }
+    if (!e.x || !e.y) {
+      const random = this.getRandomPosition();
+      e = {
+        ...e,
+        x: random.x,
+        y: random.y
+      };
+    }
 
     const { x, y } = e;
     const { currentColor, addNote } = this.props;
-    const width = NOTE_DEFAULT_HEIGHT;
-    const height = NOTE_DEFAULT_WIDTH;
+    const width = NOTE_DEFAULT_WIDTH + "px";
+    const height = NOTE_DEFAULT_HEIGHT + "px";
 
     const noteToAdd = {
       text: "",
@@ -66,7 +91,7 @@ class Mural extends React.Component {
   };
 
   handleKeyUp = e => {
-    if (e.key === "Shift") {
+    if (!e.key === "Shift") {
       this.props.disableMultipleSelection();
     }
   };
@@ -94,11 +119,12 @@ class Mural extends React.Component {
     );
 
     return (
-      <div id="Mural" className="Mural" ref={this.mural} tabIndex="-1">
+      <main id="Mural" className="Mural" ref={this.mural}>
+        <Toolbar addNoteToMural={this.addNoteToMural} />
         <Welcome />
+        <Instructions />
         {StickyNotes}
-        <Toolbar />
-      </div>
+      </main>
     );
   }
 }
