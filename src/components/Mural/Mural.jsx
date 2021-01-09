@@ -91,7 +91,7 @@ class Mural extends React.Component {
   };
 
   handleKeyUp = e => {
-    if (!e.key === "Shift") {
+    if (e.key === "Shift") {
       this.props.disableMultipleSelection();
     }
   };
