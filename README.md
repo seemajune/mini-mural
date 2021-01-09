@@ -6,8 +6,6 @@
 
 <h4 align="center">A simple mural with Sticky Notes. You can add, edit and delete Sticky Notes</h4>
 
-<p align="center">Made as a coding challenge for an interview.</p>
-
 ## Live Example
 
 You can test the application in the following link: <a href="https://react-mini-mural.netlify.com/" target="_blank">React Mini Mural</a>
@@ -51,16 +49,6 @@ To run the tests of this project. From your command line:
 ```
 $ yarn test
 ```
-
-## Notes
-
-* Only reducers have tests
-* First time dealing with eventlisteners mixed with React and for some reason it's quite tricky.
-* Only tested in Chrome
-
-## Things I would have liked to Add
-
-If I had more time I would have like to add more tests and try E2E tests with [puppeteer](https://github.com/GoogleChrome/puppeteer). Also it would be nice to save notes in localstorage.
 
 ## License
 
